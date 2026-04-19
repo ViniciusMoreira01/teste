@@ -7,7 +7,6 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    overflow: hidden;
 }
 
 
@@ -23,20 +22,18 @@ html, body {
     animation: moveBg 20s infinite alternate ease-in-out;
 }
 
-
 @keyframes moveBg {
     0% { transform: scale(1.1) translate(0, 0); }
     100% { transform: scale(1.2) translate(-20px, -20px); }
 }
 
-
 .container {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
-
 
 .formulario {
     background: rgba(255, 255, 255, 0.08);
@@ -48,8 +45,10 @@ html, body {
     box-shadow: 0 0 40px rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.2);
     animation: fadeIn 1.2s ease;
-}
 
+    max-width: 400px;
+    width: 100%;
+}
 
 @keyframes fadeIn {
     from {
@@ -62,7 +61,6 @@ html, body {
     }
 }
 
-
 .formulario h2 {
     margin-bottom: 10px;
     font-size: 26px;
@@ -73,7 +71,6 @@ html, body {
     opacity: 0.8;
     margin-bottom: 25px;
 }
-
 
 .btn {
     display: inline-block;
@@ -87,8 +84,36 @@ html, body {
     box-shadow: 0 0 15px rgba(88, 101, 242, 0.6);
 }
 
-
 .btn:hover {
     transform: scale(1.08);
     box-shadow: 0 0 25px rgba(88, 101, 242, 1);
+}
+
+
+@media (max-width: 768px) {
+    .formulario {
+        padding: 30px;
+    }
+
+    .formulario h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        padding: 25px;
+    }
+
+    .formulario h2 {
+        font-size: 20px;
+    }
+
+    .formulario p {
+        font-size: 13px;
+    }
 }
